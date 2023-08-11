@@ -1,0 +1,17 @@
+<table [border]="1" style="padding: 2%; width: 100%; min-height: 300px;">
+  <h2 style="color: orange; margin: 0">Task</h2>
+  <table [border]="1" *ngFor="let task of taskList" style="width: 100%;">
+    <tr>
+      <table style="width: 100%;">
+        <tr>
+          <h3 style="margin: 0; font-weight: normal;">{{task.description}}</h3>
+        </tr>
+        <tr>
+          <td style="font-style: italic;">{{task.priority}}</td>
+          <td style="text-align: right;">{{task.due}}</td>
+        </tr>
+      </table>
+    </tr>
+  </table>
+</table>
+

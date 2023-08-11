@@ -1,0 +1,23 @@
+<h2 style="color: orange; margin: 0;">To Do</h2>
+<form [formGroup]="todoForm" (ngSubmit)="processForm()" style="text-align: right; line-height: 1.5;">
+  <table>
+    <tr>
+      Description:
+      <input type="text" formControlName="description">
+    </tr>
+    <tr>
+      Priority:
+      High<input type="radio" formControlName="priority" value="high">
+      Medium<input type="radio" formControlName="priority" value="medium">
+      Low<input type="radio" formControlName="priority" value="low">
+    </tr>
+    <tr>
+      Due:
+      <input type="text" formControlName="due">
+    </tr>
+    <tr>
+      <button type="submit" [disabled]="todoForm.get('due')?.hasError('nonPastDate')">Add</button>
+    </tr>
+  </table>
+
+</form>
